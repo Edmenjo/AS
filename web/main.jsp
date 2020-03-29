@@ -10,13 +10,12 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        
+        <jsp:include page="resource/header.jsp" />
         
         <style type="text/css">
     #forms {
         width: 350px;
-        margin-left: auto;
-        margin-right: auto;
+        margin: auto;
         background: rgba(0,0,0,0.3);
         padding: 10px 20px;
         box-sizing: border-box;
@@ -33,53 +32,21 @@ and open the template in the editor.
     }
     
     body {
+        position: relative;
         background-image: url("/MusicLibrary/images/travis.jpg");
-        margin: auto;
+        margin-top: 200px;
         
         background-size: 100vw 100vh;
         background-attachment: fixed;
     }
-    
-    li{
-        float: left;
-        padding: 10px;
-        list-style: none;
-    }
-    
-    nav{
-        float: none;
-        margin-top: 50px;
-    }
-    
-    a{
-        text-decoration: none;
-        font-family: fantasy;
-        font-size: 30px;
-        color: whitesmoke;
-    }
-    
-    li:hover a{
-        color: orange;
-    }
-    
-    footer{
-        color: whitesmoke;
-    }
+
         </style>
         
         
     </head>
     <body>
  
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Music</a></li>
-                    <li><a href="">Drawing</a></li>
-                </ul>
-            </nav>
-        </header>    
+          
         
         
         <div id="forms">
@@ -105,9 +72,7 @@ and open the template in the editor.
         </div>
         </div>
         
-        <footer>
-            <p>Ilustrations made by @jorgepla_art</p>
-        </footer>
+        
         
     </body>
 </html>

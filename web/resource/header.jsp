@@ -9,9 +9,54 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Header & footer</title>
+        
+         <style type="text/css">   
+    li{
+        float: left;
+        padding: 10px;
+        list-style: none;
+    }
+    
+    nav{
+        position: absolute;
+        top: -200px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 35px;
+        
+    }
+    
+    a{
+        text-decoration: none;
+        font-family: fantasy;
+        font-size: 30px;
+        color: whitesmoke;
+    }
+    
+    li:hover a{
+        color: orange;
+    }
+    
+    footer{
+        color: whitesmoke;
+    }
+    </style>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Music</a></li>
+                    <li><a href="">Drawing</a></li>
+                </ul>
+            </nav>
+        </header>  
+        
+        
+        <footer>
+            <p>Ilustrations made by @jorgepla_art</p>
+        </footer>
     </body>
 </html>

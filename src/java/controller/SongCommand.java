@@ -20,6 +20,7 @@ import model.Song;
 public class SongCommand extends FrontCommand {
     
     private HttpSession session;
+    //private String peticion;
 
     @Override
     public void process(){
@@ -34,30 +35,31 @@ public class SongCommand extends FrontCommand {
         
     }
     
-    private Playlist getPlaylist(){
-        Song song1 = new Song("Depression & obsession",144);
-        Song song2 = new Song("Ninety",458);
-        Song song3 = new Song("Like a movie",140);
-        Playlist playlist = new Playlist();
-        
-        playlist.addSongToPlaylist(song1);
-        playlist.addSongToPlaylist(song2);
-        playlist.addSongToPlaylist(song3);
-        
-        if (session.isNew()) {
-            session.setAttribute("playlist", playlist);
+    private void getPlaylist(){
 
-        } else {
-            if (session.getAttribute("playlist") == null) {            
+        if(request.getParameter("peticion").equals("")){
+            //peticion = "No ha introducido ningún valor";
+        } else{
+            Song song1 = new Song("Depression & obsession",144);
+            Song song2 = new Song("Ninety",458);
+            Song song3 = new Song("Like a movie",140);
+            Playlist playlist = new Playlist();
+        
+            playlist.addSongToPlaylist(song1);
+            playlist.addSongToPlaylist(song2);
+            playlist.addSongToPlaylist(song3);
+        
+            if (session.isNew()) {
                 session.setAttribute("playlist", playlist);
-            } else {
 
-                playlist = (Playlist) session.getAttribute("playlist");
+            } else {
+                if (session.getAttribute("playlist") == null) {            
+                    session.setAttribute("playlist", playlist);
+                } else {
+
+                    playlist = (Playlist) session.getAttribute("playlist");
+                }
             }
-        }
-        
-        return playlist;
-    }
-    
- 
+        }  
+    } 
 }

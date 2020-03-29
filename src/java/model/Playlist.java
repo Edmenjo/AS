@@ -30,7 +30,7 @@ public class Playlist {
     @Override
     public String toString(){
         for(Song recorrer: playlist){
-            res += "" + recorrer.toString() + "\n";
+            res += recorrer.toString() + "\n";
         }
         return res;
     }
