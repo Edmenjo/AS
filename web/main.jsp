@@ -6,41 +6,12 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Songify</title>
+        <title>Songs & Ilustrations</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <jsp:include page="resource/header.jsp" />
-        
-        <style type="text/css">
-    #forms {
-        width: 350px;
-        margin: auto;
-        background: rgba(0,0,0,0.3);
-        padding: 10px 20px;
-        box-sizing: border-box;
-        margin-top: 20px;
-        border-radius: 9px
-    }
-
-    input, textarea {
-        width: 100%;
-        margin-bottom: 20px;
-        padding: 7px;
-        font-size: 17px;
-        border: none;
-    }
-    
-    body {
-        position: relative;
-        background-image: url("/MusicLibrary/images/travis.jpg");
-        margin-top: 200px;
-        
-        background-size: 100vw 100vh;
-        background-attachment: fixed;
-    }
-
-        </style>
+        <link rel="stylesheet" href="resource/main.css"/>
         
         
     </head>
@@ -49,19 +20,19 @@ and open the template in the editor.
           
         
         
-        <div id="forms">
-        <div id="form">
+        <div class="forms">
+        <div class="form1">
             
         <form action=FrontController>
-            <input type="text" name="peticion" placeholder="Name an artist...">
-            <input type="hidden" name="command" value="ArtistCommand"><br>
+            <input type="text" name="peticion" placeholder="Ilustrations...">
+            <input type="hidden" name="command" value="IlustrationCommand"><br>
             
             <button type="submit" class="btn btn-primary btn-block">Submit</button>
                     
             
         </form><br>
         </div>
-        <div id="form2">
+        <div class="form2">
         <form action=FrontController>
             <input type="text" name="peticion" placeholder="Name a song...">
             <input type="hidden" name="command" value="SongCommand"><br>
@@ -70,9 +41,17 @@ and open the template in the editor.
                     
         </form>
         </div>
+            <form action=FrontController>
+            <input type="text" name="peticion" placeholder="UnknownCommand">
+            <input type="hidden" name="command" value="fallo"><br>
+            
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                    
+            
+        </form><br>
         </div>
         
         
-        
+        <jsp:include page="resource/footer.jsp" />
     </body>
 </html>

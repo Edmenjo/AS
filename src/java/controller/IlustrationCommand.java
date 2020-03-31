@@ -15,13 +15,13 @@ import java.util.logging.Logger;
  *
  * @author zuzu
  */
-public class ArtistCommand extends FrontCommand {
+public class IlustrationCommand extends FrontCommand {
     
     private HttpSession session;
     //private String peticion;
     
     public void process() throws ServletException, IOException {
-        forward("/artist.jsp");
+        forward("/ilustration.jsp");
     }
     
     private void getArtist(){

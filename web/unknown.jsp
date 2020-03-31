@@ -5,15 +5,20 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
-<html>
+
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <jsp:include page="resource/header.jsp" />
+        <link rel="stylesheet" href="resource/main.css"/>
+        <title>Unknown Command</title>
     </head>
     <body>
-        <h1>UNKNOWN COMMAND TIO</h1>
+        <div class="forms">
+        <h1>UNKNOWN COMMAND</h1>
         <%String url = (String) session.getAttribute("url");%>
         <a href="/MusicLibrary<%=url%>">Volver</a>
+        </div>
     </body>
-</html>
+
