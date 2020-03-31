@@ -6,6 +6,7 @@
 package controller;
 
 import java.io.IOException;
+import java.util.logging.FileHandler;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpSession;
 import java.util.logging.Level;
@@ -23,9 +24,14 @@ public class SongCommand extends FrontCommand {
     //private String peticion;
 
     @Override
-    public void process(){
+    public void process() throws IOException{
         session = request.getSession(true);
+        FileHandler fh = new FileHandler("log_test.txt");
         //System.out.println(session);
+        
+        Logger logger = Logger.getLogger(SongCommand.class.getName());
+        logger.setLevel(Level.ALL);
+
         getPlaylist();
         try {
             forward("/song.jsp");
